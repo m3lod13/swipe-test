@@ -1,0 +1,32 @@
+
+<?php
+
+
+/**
+ * Implements hook_form_alter
+ */
+function module_petshop_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	if($form_id === 'contact_message_feedback_form'){
+		$form['subject']['widget'][0]['value']['#title'] = t('Sujet');
+		$form['name']['#title'] = t('Votre nom');
+		$form['mail']['#title'] = t('Votre email');
+		$form['actions']['submit']['#value'] = t('Envoyez votre message');
+		$form['actions']['preview']['#access'] = FALSE;
+	}
+
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function module_petshop_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+	if($form_id === 'views_exposed_form'){
+		$form['sort_by']['#title'] = t('Trier par');
+		$form['sort_order']['#title'] = t('Par ordre');
+		$form['sort_order']['#options']['ASC'] = t('Ascendant');
+		$form['sort_order']['#options']['DESC'] = t('Descendant');
+		$form['actions']['submit']['#value'] = t('Filtrer');
+	}
+	
+}

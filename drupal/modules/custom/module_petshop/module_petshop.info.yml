@@ -1,0 +1,4 @@
+name: "Module Pet shop"
+description: "Custom update for the shop"
+type: module
+core: 8.x
