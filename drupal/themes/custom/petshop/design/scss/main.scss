@@ -1,0 +1,175 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@mixin importFont($name){
+	@import url('https://fonts.googleapis.com/css?family=#{$name}&display=swap;');
+}
+
+@include importFont(Roboto);
+@include importFont("Noto+Sans+TC");
+
+$colors: (
+	green-title: #588c7e,
+	white: #fff,
+	light-green: #6daa99, 
+	black: #000
+);
+
+
+
+%center{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin roundedBorder($radius){
+	border-radius: $radius;
+	
+}
+
+@mixin borderColor($size, $color){
+	border: $size solid $color;
+	
+}
+
+%petImage{
+	height: 25vh;
+}
+
+
+html,
+body {
+	height: 100%;
+}
+
+body{
+	font-family: 'Roboto', sans-serif; 
+	font-size: 14px;
+}
+
+a, .page-link{
+	color: map-get($colors, green-title);
+
+	&:hover{
+		color: map-get($colors, green-title);
+		text-decoration: underline;
+	}
+}
+
+header{
+	#logo{
+		@extend %center;
+		margin-top: 20px; 
+		margin-bottom: 20px; 
+	}
+	nav{
+		@extend %center;
+		@include border-radius(5px);
+	}
+
+	h1{
+		text-align:center;
+		font-size: 2em ;
+	}
+}
+
+main{
+	h2{
+		@include border-radius(5px);
+		background-color: map-get($colors, green-title);
+		color: map-get($colors, white);
+		font-size: 1.5em ;
+	}
+
+	.hp-articles {
+
+		& > div{
+			@include border-radius(5px);
+			@include borderColor(2px, map-get($colors, green-title));
+		}
+	
+
+		$i: 1;
+		@while $i <= 3{
+			.pet-image-#{$i}{
+				background: url(../../img/chat#{$i}.jpg) center center no-repeat;
+				@extend %petImage;
+				$i: $i + 1;
+			}
+		}
+		
+		h3 a{
+			font-size: 1.2em;
+			text-align: center;
+			width: 100%;
+			@extend %center;
+			display: block;
+		}
+		
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				&.info-left{
+					float: left;
+				}
+
+				&.info-right{
+					float: right;
+				}
+			}
+
+		}
+
+		.link-more a{
+			display: block; 
+			background-color: map-get($colors, green-title); 
+			color: map-get($colors, white);
+			padding: 20px;
+			font-size: 1.2em;
+			text-align: center;
+		}
+	}
+
+	.filters{
+		background-color: map-get($colors, light-green); 
+
+		.btn-primary{
+			background-color: map-get($colors, black); 
+			border-color: map-get($colors, black); 
+		}
+
+
+	}
+	
+
+	
+}
+
+
+footer{
+
+}
+
+
+
+@include media-breakpoint-down(md) {
+	header{
+		#logo{
+			width: 40%;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	header{
+		#logo{
+			width: 10%;
+		}
+	}
+	.form-group{
+		display: inline-block;
+		
+	}
+}

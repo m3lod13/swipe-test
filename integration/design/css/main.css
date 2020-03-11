@@ -7790,9 +7790,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px; }
 
-a {
+a, .page-link {
   color: #588c7e; }
-  a:hover {
+  a:hover, .page-link:hover {
     color: #588c7e;
     text-decoration: underline; }
 
@@ -7839,12 +7839,24 @@ main .hp-articles .link-more a {
   padding: 20px;
   font-size: 1.2em;
   text-align: center; }
+main .filters {
+  background-color: #6daa99; }
+  main .filters .btn-primary {
+    background-color: #000;
+    border-color: #000; }
+
+footer {
+  background-color: #588c7e;
+  color: #fff; }
 
 @media (max-width: 991.98px) {
   header #logo {
     width: 40%; } }
 @media (min-width: 768px) {
   header #logo {
-    width: 10%; } }
+    width: 10%; }
+
+  .form-group {
+    display: inline-block; } }
 
 /*# sourceMappingURL=main.css.map */

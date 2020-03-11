@@ -9,8 +9,12 @@
 
 $colors: (
 	green-title: #588c7e,
-	white: #fff
+	white: #fff,
+	light-green: #6daa99, 
+	black: #000
 );
+
+
 
 %center{
 	margin-left: auto;
@@ -42,7 +46,7 @@ body{
 	font-size: 14px;
 }
 
-a{
+a, .page-link{
 	color: map-get($colors, green-title);
 
 	&:hover{
@@ -127,6 +131,17 @@ main{
 			text-align: center;
 		}
 	}
+
+	.filters{
+		background-color: map-get($colors, light-green); 
+
+		.btn-primary{
+			background-color: map-get($colors, black); 
+			border-color: map-get($colors, black); 
+		}
+
+
+	}
 	
 
 	
@@ -134,7 +149,8 @@ main{
 
 
 footer{
-
+	background-color: map-get($colors, green-title); 
+	color: map-get($colors, white);
 }
 
 
@@ -152,5 +168,9 @@ footer{
 		#logo{
 			width: 10%;
 		}
+	}
+	.form-group{
+		display: inline-block;
+		
 	}
 }

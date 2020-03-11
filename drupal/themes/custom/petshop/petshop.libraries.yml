@@ -1,8 +1,13 @@
 global-styling:
   css:
     theme:
-      css/custom.css: {}
+      fontawesome/css/fontawesome.min.css: {}
+      fontawesome/css/brands.min.css: {}
+      fontawesome/css/solid.min.css: {}
+      design/css/main.css: {}
   js:
-    js/main.js: {}
+    js/tether.min.js: {}
+    node_modules/bootstrap/dist/js/bootstrap.min.js: {}
+    js/script.js: {}
   dependencies:
     - core/jquery    
