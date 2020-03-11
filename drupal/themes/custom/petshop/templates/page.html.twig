@@ -43,40 +43,46 @@
  * @see html.html.twig
  */
  #}
- <div class="layout-container">
+
+ <header class="clearfix container-fluid">
+ 	<div id="logo"><a href="/" title="Accueil" rel="opener"><img src="{{ logopath }}" alt="Pet Shop" class="img-fluid" /></a></div>
+ 	<h1>{{ site_name }}</h1>
 
  	{{ page.primary_menu }}
 
  	{#{{ page.breadcrumb }}#}
 
- 	{{ page.highlighted }}
+ 	
 
 
+ 	
 
- 	{{ page.content }}
+</header>
+<main class="clearfix container-fluid">
+
+	{{ page.content }}
+</main>
 
 
+ {% if page.footer %}
+ 	<footer role="contentinfo" class="page-footer teal">
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="col l6 s12">
+ 					<h5 class="white-text">Company Bio</h5>
+ 					<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
- 	{% if page.footer %}
- 		<footer role="contentinfo" class="page-footer teal">
+ 				</div>
+ 				{{ page.footer }}
+ 			</div>
+ 		</div>
+ 		<div class="footer-copyright">
  			<div class="container">
- 				<div class="row">
- 					<div class="col l6 s12">
- 						<h5 class="white-text">Company Bio</h5>
- 						<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
- 					</div>
- 					{{ page.footer }}
- 				</div>
+ 				Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
  			</div>
- 			<div class="footer-copyright">
- 				<div class="container">
- 					Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
- 				</div>
- 			</div>
- 		</footer>
- 	{% endif %}
+ 		</div>
+ 	</footer>
+ {% endif %}
 
- </div>{# /.layout-container #}
+ {# /.layout-container #}

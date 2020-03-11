@@ -21,12 +21,21 @@ function module_petshop_form_alter(&$form, \Drupal\Core\Form\FormStateInterface 
  * Implements hook_form_FORM_ID_alter().
  */
 function module_petshop_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+
 	if($form_id === 'views_exposed_form'){
+		//kint($form);
 		$form['sort_by']['#title'] = t('Trier par');
+		$form['sort_by']['#options']['created'] = t('Date d\'ajout');
 		$form['sort_order']['#title'] = t('Par ordre');
 		$form['sort_order']['#options']['ASC'] = t('Ascendant');
 		$form['sort_order']['#options']['DESC'] = t('Descendant');
 		$form['actions']['submit']['#value'] = t('Filtrer');
+		$form['field_statut_value']['#options']['All'] = t('Tous');
+		$form['actions']['submit']['#attributes']['class'][] = 'btn'; 
+		$form['actions']['submit']['#attributes']['class'][] = 'btn-primary'; 
+		$form['actions']['submit']['#attributes']['class'][] = 'ml-lg-5'; 
+		$form['actions']['submit']['#attributes']['class'][] = 'ml-md-2'; 
+		$form['actions']['submit']['#attributes']['class'][] = 'mt-lg-4'; 
 	}
 	
 }

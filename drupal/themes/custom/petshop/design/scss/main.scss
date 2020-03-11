@@ -31,9 +31,9 @@ $colors: (
 	
 }
 
-%petImage{
+/*%petImage{
 	height: 25vh;
-}
+}*/
 
 
 html,
@@ -86,16 +86,7 @@ main{
 			@include border-radius(5px);
 			@include borderColor(2px, map-get($colors, green-title));
 		}
-	
 
-		$i: 1;
-		@while $i <= 3{
-			.pet-image-#{$i}{
-				background: url(../../img/chat#{$i}.jpg) center center no-repeat;
-				@extend %petImage;
-				$i: $i + 1;
-			}
-		}
 		
 		h3 a{
 			font-size: 1.2em;
