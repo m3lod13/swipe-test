@@ -30,12 +30,7 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
+
   {{ title_prefix }}
   {{ title }}
   {{ title_suffix }}
@@ -51,9 +46,9 @@
 
   {% if rows -%}
     <div class="row justify-content-center mt-5 mb-5 hp-articles">
-      <div class="col-lg-3 col-md-12 ml-3 mr-3 mb-3 p-0">
+      
         {{ rows }}
-      </div>
+      
     </div>
   {% elseif empty -%}
     {{ empty }}
@@ -73,4 +68,4 @@
   {% endif %}
 
   {{ feed_icons }}
-</div>
+
