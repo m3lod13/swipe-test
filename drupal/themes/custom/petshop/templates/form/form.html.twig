@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+ #}
+ <div class="row justify-content-center mt-5 mb-5 align-items-start">
+ 	<div class="col-lg-10 col-md-12 p-4 filters rounded">
+ 		<div class="d-lg-none d-xl-none btn btn-primary" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+ 			<h4>{{ 'Filtres'|t }} <i class="fas fa-minus-square"></i></h4>		
+ 		</div>
+ 		<div class="form-center mx-auto collapse show " id="collapseFilter">
+ 			<form{{ attributes }}>
+ 				{{ children }}
+ 			</form>
+ 		</div>
+ 	</div>
+</div>
+
